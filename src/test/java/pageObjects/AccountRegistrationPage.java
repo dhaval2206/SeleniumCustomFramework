@@ -54,7 +54,11 @@ public class AccountRegistrationPage extends BasePage {
 	}
 
 	public void setPassword(String pwd) {
-		txtFirstName.sendKeys(pwd);
+		txtPassword.sendKeys(pwd);
+	}
+
+	public void setCnfPassword(String pwd) {
+		txtCnfPassword.sendKeys(pwd);
 	}
 
 	public void setPrivacyPolicy() {
@@ -65,7 +69,7 @@ public class AccountRegistrationPage extends BasePage {
 		btnContinue.click();
 	}
 
-	public String getConfirmationmsg(String pwd) {
+	public String getConfirmationmsg() {
 		try {
 			return msgConfirmation.getText();
 		} catch (Exception e) {
