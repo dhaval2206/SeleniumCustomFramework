@@ -65,7 +65,8 @@ public class AccountRegistrationPage extends BasePage {
 		chkdPolicy.click();
 	}
 
-	public void clickContinueButton() {
+	public void clickContinueButton() throws InterruptedException {
+		Thread.sleep(3000);
 		btnContinue.click();
 	}
 
