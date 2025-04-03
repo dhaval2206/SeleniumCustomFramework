@@ -23,24 +23,25 @@ public class BaseClass {
 
 	@BeforeClass
 	@Parameters({ "os", "browser" })
-	public void setup(String os, String browser) throws IOException {
+	public void setup() throws IOException {
 		loggers = LogManager.getLogger(this.getClass());
 
-		switch (browser.toLowerCase()) {
-		case "chrome":
-			driver = new ChromeDriver();
-			break;
-		case "firefox":
-			driver = new FirefoxDriver();
-			break;
-		case "edge":
-			driver = new EdgeDriver();
-			break;
-		default:
-			System.out.println("Invalid browser name");
-			return;
-		}
-		FileReader file = new FileReader("./src/test/resources");
+//		switch (browser.toLowerCase()) {
+//		case "chrome":
+//			driver = new ChromeDriver();
+//			break;
+//		case "firefox":
+//			driver = new FirefoxDriver();
+//			break;
+//		case "edge":
+//			driver = new EdgeDriver();
+//			break;
+//		default:
+//			System.out.println("Invalid browser name");
+//			return;
+//		}
+		driver = new ChromeDriver();
+		FileReader file = new FileReader("./src/test/resources/config.properties");
 		prop = new Properties();
 		prop.load(file);
 		driver.manage().deleteAllCookies();
